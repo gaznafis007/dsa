@@ -34,4 +34,14 @@ function patternPrint (number){
     console.log("")
 }
 
-patternPrint(4)
+// patternPrint(4)
+
+function sumOfBit(number){
+    if(number < 1){
+        return 0;
+    }
+    let lastDigit = number%10;
+    let remaining = Math.floor(number/10);
+    return sumOfBit(remaining)+lastDigit
+}
+console.log(sumOfBit(987654321))
