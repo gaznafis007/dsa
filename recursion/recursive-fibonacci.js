@@ -1,6 +1,7 @@
 // Recursive Fibonacci
 // Give a number 'n', find its fibonacci value
 
+// This is my solution where i didn't use recursion
 const recursiveFibonacci = number =>{
     let result = [0, 1];
     if(number < 2){
@@ -28,7 +29,7 @@ console.log(recursiveFibonacci(6))
 
 // solution using recursion
 function optimalRecursiveFibonacci (n){
-    if (n < 2){
+    if (n < 2){ //base case
         return n;
     }
     return optimalRecursiveFibonacci(n-1) + optimalRecursiveFibonacci(n-2);
