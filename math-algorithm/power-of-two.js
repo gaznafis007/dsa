@@ -11,7 +11,7 @@ const determinePowerOfTwo = number =>{
 console.log(determinePowerOfTwo(1))
 
 // solution 
-function isPrime (n){
+function isPowerOfTwo (n){
     while (n > 1){
         if(n%2 !== 0){
             return false
@@ -21,15 +21,15 @@ function isPrime (n){
     return true
 }
 // O(logn)
-console.log(isPrime(16))
+console.log(isPowerOfTwo(32))
 
 // optimal solution
 
-function optimalIsPrime (n){
+function optimalIsPowerOfTwo (n){
     if ((n & (n-1)) === 0){
         return true
     }
     return false
 }
 // O(1)
-console.log(optimalIsPrime(16))
+console.log(optimalIsPowerOfTwo(16))

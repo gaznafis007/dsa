@@ -12,7 +12,7 @@ function sumOfN (number){
         return 0;
     }
     // console.log(result)
-     let result = sumOfN(number-1) //solution vai utkarsh gupta
+     let result = sumOfN(number-1) //solution by utkarsh gupta
     return number + result;
 }
 
