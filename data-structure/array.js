@@ -10,3 +10,10 @@ arrOfDataStructure.unshift(0)
 console.log("unshift", arrOfDataStructure);
 arrOfDataStructure.shift(2)
 console.log("shift", arrOfDataStructure);
+
+
+const newArray = arrOfDataStructure.map(arr=> arr+1);
+console.log("map", newArray)
+console.log(arrOfDataStructure.concat(newArray));
+console.log("slice", arrOfDataStructure.slice(0,3));
+console.log("splice", arrOfDataStructure.splice(3))
