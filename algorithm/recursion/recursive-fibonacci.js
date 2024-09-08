@@ -29,7 +29,7 @@ console.log(recursiveFibonacci(6))
 
 // solution using recursion
 function optimalRecursiveFibonacci (n){
-    if (n < 2){ //base case
+    if (n <= 2){ //base case
         return n;
     }
     return optimalRecursiveFibonacci(n-1) + optimalRecursiveFibonacci(n-2);
