@@ -52,6 +52,8 @@ myStack.push(15);
 // myStack.print()
 
 
+// Satisfying LIFO
+
 class NewStack {
     constructor(){
         this.items = []
@@ -74,7 +76,7 @@ class NewStack {
     // shift(){
     //     return this.items.shift()
     // }
-    
+
     isEmpty(){
         return this.items.length === 0;
     }
