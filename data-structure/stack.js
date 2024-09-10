@@ -65,12 +65,16 @@ class NewStack {
         }
         return this.items.pop()
     }
-    unshift(item){
-        this.items.unshift(item)
-    }
-    shift(){
-        return this.items.shift()
-    }
+
+    // This part is not for stack implementation
+
+    // unshift(item){
+    //     this.items.unshift(item)
+    // }
+    // shift(){
+    //     return this.items.shift()
+    // }
+    
     isEmpty(){
         return this.items.length === 0;
     }
