@@ -30,6 +30,7 @@ class List {
     }
     append(value){
         
+        
     }
     print(){
         if(this.isEmpty()){
@@ -56,3 +57,4 @@ linkedList.prepend(10)
 console.log(linkedList.prepend(15))
 console.log(linkedList.getSize())
 linkedList.print()
+console.log(linkedList.append(1))
