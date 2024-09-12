@@ -43,14 +43,54 @@ class List{
         this.size++
         return this.head
     }
+    insert(value, index){
+        if(index < 0 || index > this.size){
+            return;
+        }
+        if(index === 0){
+            this.prepend(value)
+        }
+        else{
+            const node = new Node(value);
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++){
+                prev = prev.next;
+            }
+            node.next = prev.next;
+            prev.next = node
+        }
+        this.size++
+    }
+    removeByIndex(index){
+        let removeItem;
+        if(index < 0 || index > this.size){
+            return null;
+        }
+        if(index === 0){
+            removeItem = this.head;
+            this.head = this.head.next;
+        }
+        else{
+            let prev = this.head;
+            for(let i = 0; i < index - 1; i++){
+                prev = prev.next;
+            }
+            removeItem = prev.next;
+            prev.next = removeItem.next
+            console.log(prev)
+        }
+        this.size--
+        return removeItem.value
+    }
     print(){
         if(this.isEmpty()){
             console.log("unfortunately the list is empty!")
         }else{
             let currentValue = this.head;
+            // console.log(currentValue)
             let result = ``;
             while(currentValue){
-                result = `${result} ${currentValue.value}`
+                result += ` ${currentValue.value}`
                 currentValue = currentValue.next
             }
             console.log(result)
@@ -60,12 +100,15 @@ class List{
 
 const linkedList = new List();
 
-console.log(linkedList.isEmpty())
-console.log(linkedList.getSize())
+// console.log(linkedList.isEmpty())
+// console.log(linkedList.getSize())
 console.log(linkedList.prepend(5))
 console.log(linkedList.prepend(10))
 console.log(linkedList.prepend(15))
 console.log(linkedList.append(20))
 // console.log(linkedList.getSize())
 // console.log(linkedList.isEmpty())
+// linkedList.insert(40, 1)
+console.log(linkedList.removeByIndex(3))
+// console.log(linkedList.getSize())
 linkedList.print()
