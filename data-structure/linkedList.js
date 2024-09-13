@@ -82,6 +82,25 @@ class List{
         this.size--
         return removeItem.value
     }
+    removeByValue(value){
+        let removeItem = value;
+        if(this.isEmpty()){
+            return "List is empty"
+        }
+        if(this.head.value === value){
+            this.head.next = this.head
+            this.size--
+        }
+        else{
+            let prev = this.head;
+            while(prev.next && prev.next.value !== removeItem){
+                prev = prev.next
+            }
+            removeItem = prev.next;
+            prev.next = removeItem.next
+            this.size--
+        }
+    }
     print(){
         if(this.isEmpty()){
             console.log("unfortunately the list is empty!")
@@ -106,9 +125,13 @@ console.log(linkedList.prepend(5))
 console.log(linkedList.prepend(10))
 console.log(linkedList.prepend(15))
 console.log(linkedList.append(20))
+console.log(linkedList.append(50))
+console.log(linkedList.append(60))
+console.log(linkedList.append(70))
 // console.log(linkedList.getSize())
 // console.log(linkedList.isEmpty())
 // linkedList.insert(40, 1)
 console.log(linkedList.removeByIndex(3))
 // console.log(linkedList.getSize())
+linkedList.removeByValue(10)
 linkedList.print()
